@@ -11,6 +11,7 @@ import { CoursesService } from './courses.service';
             </li>
         </ul>
         <img src="{{ imageUrl }}"/>
+        <img [src]="imageUrl" />       //this is property binding, the effect is the same as the line above it
     `
 })
 export class CoursesComponent {
