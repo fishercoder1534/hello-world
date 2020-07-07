@@ -19,9 +19,11 @@ import { CoursesService } from './courses.service';
             </tr>
         </table>
 
+        <br/>
         <div (click)="onDivClicked()">
             <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'red'" (click)="onSave($event)">Save</button>
         </div>
+        <br/>
 
         <input (keyup)="onKeyUp($event)" />
         <input (keyup.enter)="onKeyUp2()" />
@@ -30,6 +32,13 @@ import { CoursesService } from './courses.service';
 
         <input [value]="name" (keyup.enter)="name = $event.target.value; onKeyUp5()" />
         <input [(ngModel)]="name2" (keyup.enter)="onKeyUp6()" />
+        <br/>
+        <br/>
+        {{ course.c_title | uppercase }}<br/>
+        {{ course.students | number }}<br/>
+        {{ course.rating | number:'1.2-3' }}<br/>
+        {{ course.price | currency:'AUD'}}<br/>
+        {{ course.releaseDate | date:'shortDate' }}<br/>
     `
 })
 export class CoursesComponent {
@@ -40,6 +49,14 @@ export class CoursesComponent {
     isActive = false;
     name = "This is the default name and could be overwritten.";
     name2 = "Default name2";
+
+    course = {
+        c_title: "The Angular Course",
+        rating: 4.907654,
+        students: 30123,
+        price: 190.15,
+        releaseDate: new Date(2016, 10, 2),
+    }
 
     constructor(service: CoursesService) {
         this.courses = service.getCourses();
