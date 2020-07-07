@@ -22,6 +22,8 @@ import { CoursesService } from './courses.service';
         <div (click)="onDivClicked()">
             <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'red'" (click)="onSave($event)">Save</button>
         </div>
+
+        <input (keyup)="onKeyUp($event)" />
     `
 })
 export class CoursesComponent {
@@ -44,5 +46,11 @@ export class CoursesComponent {
     onDivClicked() {
         // this is an example to show event bubble, it bubbles up the DOM tree
         console.log("Div was clicked.")
+    }
+
+    onKeyUp($event) {
+        if ($event.keyCode === 13) {
+            console.log("ENTER was pressed");
+        }
     }
 }
