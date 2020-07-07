@@ -19,7 +19,9 @@ import { CoursesService } from './courses.service';
             </tr>
         </table>
 
-        <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'red'" (click)="onSave($event)">Save</button>
+        <div (click)="onDivClicked()">
+            <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'red'" (click)="onSave($event)">Save</button>
+        </div>
     `
 })
 export class CoursesComponent {
@@ -35,6 +37,12 @@ export class CoursesComponent {
     }
 
     onSave($event) {
+        $event.stopPropagation();//adding this line to stop event bubbling up, remove this line to show event bubbling
         console.log("Button was clicked.", $event)
+    }
+
+    onDivClicked() {
+        // this is an example to show event bubble, it bubbles up the DOM tree
+        console.log("Div was clicked.")
     }
 }
