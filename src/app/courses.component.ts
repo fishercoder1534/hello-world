@@ -27,6 +27,8 @@ import { CoursesService } from './courses.service';
         <input (keyup.enter)="onKeyUp2()" />
         <input (keyup.enter)="onKeyUp3($event)" />
         <input #email (keyup.enter)="onKeyUp4(email.value)" />
+
+        <input [value]="name" (keyup.enter)="name = $event.target.value; onKeyUp5()" />
     `
 })
 export class CoursesComponent {
@@ -35,6 +37,7 @@ export class CoursesComponent {
     imageUrl;
     colSpan = 2;
     isActive = false;
+    name = "This is the default name and could be overwritten.";
 
     constructor(service: CoursesService) {
         this.courses = service.getCourses();
@@ -67,5 +70,10 @@ export class CoursesComponent {
 
     onKeyUp4(email) {
         console.log(email);
+    }
+
+    onKeyUp5() {
+        // this shows two-way binding: binding data from component to view, and also from view to component
+        console.log(this.name);
     }
 }
