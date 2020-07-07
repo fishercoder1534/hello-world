@@ -19,7 +19,7 @@ import { CoursesService } from './courses.service';
             </tr>
         </table>
 
-        <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'red'" >Save</button>
+        <button class="btn btn-primary" [class.active]="isActive" [style.backgroundColor]="isActive ? 'blue' : 'red'" (click)="onSave($event)">Save</button>
     `
 })
 export class CoursesComponent {
@@ -32,5 +32,9 @@ export class CoursesComponent {
     constructor(service: CoursesService) {
         this.courses = service.getCourses();
         this.imageUrl = "https://i.ytimg.com/vi/DiOTbkLZeK0/maxresdefault.jpg";
+    }
+
+    onSave($event) {
+        console.log("Button was clicked.", $event)
     }
 }
