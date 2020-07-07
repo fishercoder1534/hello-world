@@ -24,6 +24,7 @@ import { CoursesService } from './courses.service';
         </div>
 
         <input (keyup)="onKeyUp($event)" />
+        <input (keyup.enter)="onKeyUp2()" />
     `
 })
 export class CoursesComponent {
@@ -52,5 +53,9 @@ export class CoursesComponent {
         if ($event.keyCode === 13) {
             console.log("ENTER was pressed");
         }
+    }
+
+    onKeyUp2() {
+        console.log("ENTER2 was pressed")
     }
 }
