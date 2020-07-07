@@ -25,6 +25,7 @@ import { CoursesService } from './courses.service';
 
         <input (keyup)="onKeyUp($event)" />
         <input (keyup.enter)="onKeyUp2()" />
+        <input (keyup.enter)="onKeyUp3($event)" />
     `
 })
 export class CoursesComponent {
@@ -56,6 +57,10 @@ export class CoursesComponent {
     }
 
     onKeyUp2() {
-        console.log("ENTER2 was pressed")
+        console.log("ENTER2 was pressed");
+    }
+
+    onKeyUp3($event) {
+        console.log($event.target.value);
     }
 }
