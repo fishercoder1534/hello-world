@@ -39,6 +39,9 @@ import { CoursesService } from './courses.service';
         {{ course.rating | number:'1.2-3' }}<br/>
         {{ course.price | currency:'AUD'}}<br/>
         {{ course.releaseDate | date:'shortDate' }}<br/>
+
+        <br/>
+        {{ text | summary }}
     `
 })
 export class CoursesComponent {
@@ -49,6 +52,7 @@ export class CoursesComponent {
     isActive = false;
     name = "This is the default name and could be overwritten.";
     name2 = "Default name2";
+    text = `This is a great text`;
 
     course = {
         c_title: "The Angular Course",
