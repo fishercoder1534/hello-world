@@ -29,6 +29,7 @@ import { CoursesService } from './courses.service';
         <input #email (keyup.enter)="onKeyUp4(email.value)" />
 
         <input [value]="name" (keyup.enter)="name = $event.target.value; onKeyUp5()" />
+        <input [(ngModel)]="name2" (keyup.enter)="onKeyUp6()" />
     `
 })
 export class CoursesComponent {
@@ -38,6 +39,7 @@ export class CoursesComponent {
     colSpan = 2;
     isActive = false;
     name = "This is the default name and could be overwritten.";
+    name2 = "Default name2";
 
     constructor(service: CoursesService) {
         this.courses = service.getCourses();
@@ -75,5 +77,9 @@ export class CoursesComponent {
     onKeyUp5() {
         // this shows two-way binding: binding data from component to view, and also from view to component
         console.log(this.name);
+    }
+
+    onKeyUp6() {
+        console.log(this.name2);
     }
 }
