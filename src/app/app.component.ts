@@ -32,4 +32,17 @@ export class AppComponent {
     { id: 2, name: "tutorial2" },
     { id: 3, name: "tutorial3" },
   ];
+
+  onAdd() {
+    this.tutorials.push({id: 4, name: "tutorial5"});
+  }
+
+  onRemove(tutorial) {
+    let index = this.tutorials.indexOf(tutorial);
+    this.tutorials.splice(index, 1);
+  }
+
+  onUpdate(tutorial) {
+    tutorial.name = "UPDATED";
+  }
 }

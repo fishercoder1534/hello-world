@@ -2,8 +2,9 @@
 <br/>
 <br/>
 <ul>
+  <button (click)=onAdd()>Add</button>
   <li *ngFor="let tutorial of tutorials; index as i, even as isEven">
-    {{ i }} - {{ tutorial.id }} - {{ tutorial.name }} <span *ngIf="isEven">(EVEN)</span>
+    {{ i }} - {{ tutorial.id }} - {{ tutorial.name }} <span *ngIf="isEven">(EVEN)</span><button (click)="onRemove(tutorial)">Remove</button><button (click)="onUpdate(tutorial)">Update</button>
   </li>
 </ul>
 <br/>
