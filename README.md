@@ -30,7 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 In your terminal, in this directory, type `ng g c course`. What this does is generate a new component called course, generates all boilerplate code and adds this new component into your AppModule
 
 ## How to generate a new Angular service
-In your terminal, in this directory, type `ng g c service`. What this does is generate a new service called email, generates two boilerplate code files: email.service.spec.ts and email.service.ts
+In your terminal, in this directory, type `ng g s email`. What this does is generate a new service called email, generates two boilerplate code files: email.service.spec.ts and email.service.ts
 
 ## How to generate a new Angular directive
 In your terminal, in this directory, type `ng g d input-format`. What this does is generate a new directive called input-format, generates two boilerplate code files: input-format.directive.spec.ts and input-format.directive.ts
