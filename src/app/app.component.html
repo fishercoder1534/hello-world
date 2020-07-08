@@ -1,6 +1,16 @@
 <h1>Angular</h1>
 <br/>
 <br/>
+<button 
+  [ngStyle]="{
+    'backgroundColor': canSave ? 'blue' : 'gray',
+    'color': canSave ? 'white' : 'black',
+    'fontWeight': canSave ? 'bold' : 'normal' 
+  }"
+  >
+  Save</button>
+<br/>
+<br/>
 <button (click)="loadLanguages()">Load Languages</button>
 <li *ngFor="let lang of languages; trackBy: trackLanguage">
   {{ lang.name }}

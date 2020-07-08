@@ -59,4 +59,6 @@ export class AppComponent {
   trackLanguage(index, language) {
     return language ? language.id : undefined;
   }
+
+  canSave = true;
 }
