@@ -3,7 +3,7 @@
         <div *ngIf="contact.touched && !contact.valid">You haven't filled out the form completely yet.</div><br/>
         <div class="form-group">
             <label for="">First Name</label>
-            <input required minlength="3" maxlength="20" pattern="Steve Fisher" ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" id="firstName" type="text" class="form-control">
+            <input required minlength="3" maxlength="20" pattern="Steve" ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" id="firstName" type="text" class="form-control">
             <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
                 <div *ngIf="firstName.errors.required">First Name is required.</div>
                 <div *ngIf="firstName.errors.minlength">First Name should be minimum {{ firstName.errors.minlength.requiredLength }} chars.</div>
@@ -16,5 +16,5 @@
             <textarea ngModel name="comment" #comment="ngModel" (change)="log(comment)" id="comment" cols="30" rows="10" class="form-control"></textarea>
         </div>
     </div>
-    <button class="btn btn-primary">Submit</button>
+    <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
 </form>
