@@ -26,4 +26,10 @@ export class AppComponent {
   courses = [1, 2];
 
   viewMode = 'else';
+
+  tutorials = [
+    { id: 1, name: "tutorial1" },
+    { id: 2, name: "tutorial2" },
+    { id: 3, name: "tutorial3" },
+  ];
 }
