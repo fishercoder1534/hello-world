@@ -1,6 +1,12 @@
 <h1>Angular</h1>
 <br/>
 <br/>
+<button (click)="loadLanguages()">Load Languages</button>
+<li *ngFor="let lang of languages; trackBy: trackLanguage">
+  {{ lang.name }}
+</li>
+<br/>
+<br/>
 <ul>
   <button (click)=onAdd()>Add</button>
   <li *ngFor="let tutorial of tutorials; index as i, even as isEven">

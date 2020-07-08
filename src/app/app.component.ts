@@ -45,4 +45,18 @@ export class AppComponent {
   onUpdate(tutorial) {
     tutorial.name = "UPDATED";
   }
+
+  languages;
+
+  loadLanguages() {
+    this.languages = [
+      {id: 1, name: "English"},
+      {id: 2, name: "German"},
+      {id: 3, name: "Japanese"},
+    ];
+  }
+
+  trackLanguage(index, language) {
+    return language ? language.id : undefined;
+  }
 }
