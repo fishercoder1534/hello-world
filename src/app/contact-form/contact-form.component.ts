@@ -13,4 +13,12 @@ export class ContactFormComponent {
   submit(f) {
     console.log(f);
   }
+
+  contactMethods = [
+    {id: 1, name: "Email"},
+    {id: 2, name: "Cell"},
+    {id: 3, name: "Phone"},
+    {id: 4, name: "Home"},
+    {id: 5, name: "Fax"},
+  ];
 }
