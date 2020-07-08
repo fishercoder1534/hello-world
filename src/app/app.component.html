@@ -2,4 +2,4 @@
 <courses></courses>
 <br/>
 <br/>
-<app-favorite [is-favorite]="post.isFavorite" ></app-favorite>
+<app-favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChanged()"></app-favorite>
