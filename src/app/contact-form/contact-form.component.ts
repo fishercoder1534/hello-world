@@ -16,9 +16,7 @@ export class ContactFormComponent {
 
   contactMethods = [
     {id: 1, name: "Email"},
-    {id: 2, name: "Cell"},
-    {id: 3, name: "Phone"},
-    {id: 4, name: "Home"},
-    {id: 5, name: "Fax"},
+    {id: 2, name: "Phone"},
+    {id: 3, name: "Fax"},
   ];
 }
