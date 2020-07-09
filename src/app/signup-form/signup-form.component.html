@@ -9,6 +9,9 @@
         <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
             <div *ngIf="username.errors.required" class="alert alert-danger">Username is required.</div>
             <div *ngIf="username.errors.minlength" class="alert alert-danger">Username min length is {{ username.errors.minlength.requiredLength }} chars.</div>
+            <div *ngIf="username.errors.cannotContainSpace" class="alert alert-danger">Username cannot contain spaces.</div>
+            <div *ngIf="username.errors.maxLength" class="alert alert-danger">Username max length is 30 chars.</div>
+            <!-- note this is a custom defined error, so it's camel case: maxLenght instead of maxlength like minlength -->
         </div>
     </div>
     <div class="form-group">
