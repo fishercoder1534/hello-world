@@ -12,6 +12,7 @@
             <div *ngIf="username.errors.cannotContainSpace" class="alert alert-danger">Username cannot contain spaces.</div>
             <div *ngIf="username.errors.maxLength" class="alert alert-danger">Username max length is 30 chars.</div>
             <!-- note this is a custom defined error, so it's camel case: maxLenght instead of maxlength like minlength -->
+            <div *ngIf="username.errors.shouldBeUnique" class="alert alert-danger">Username is already taken.</div>
         </div>
     </div>
     <div class="form-group">
